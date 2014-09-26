@@ -31,14 +31,14 @@ var Link = require('docker-link')
   , link = new Link({ prefix: 'PREFIX_' });
 
 //
-// Which would result in: link.get('REDIS');
+// Which would result in: link.get('redis' || 'REDIS');
 //
 {
-  PORT_TCP: 'tcp://172.17.0.2:6379',
-  PORT: 'tcp://172.17.0.2:6379',
-  PORT_TCP_ADDR: '172.17.0.2',
-  PORT_TCP_PORT: '6379',
-  PORT_TCP_PROTO: 'tcp',
-  NAME: '/container/redis'
+  port_tcp: 'tcp://172.17.0.2:6379',
+  port: 'tcp://172.17.0.2:6379',
+  port_tcp_addr: '172.17.0.2',
+  port_tcp_port: '6379',
+  port_tcp_proto: 'tcp',
+  name: '/container/redis'
 }
 ```

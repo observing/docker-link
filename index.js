@@ -63,7 +63,7 @@ Link.prototype.parse = function(key, value) {
   // and hard to reference properly from scripts.
   //
   directive.splice(1, 1);
-  this.data[keys[0]][directive.join('_')] = value;
+  this.data[keys[0]][directive.join('_').toLowerCase()] = value;
 
   return this;
 }

@@ -1,6 +1,6 @@
 {
   "name": "docker-link",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Parser for reading environment variables set by linking Docker containers",
   "main": "index.js",
   "scripts": {
