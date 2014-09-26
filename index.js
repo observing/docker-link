@@ -8,13 +8,15 @@
  * @api public
  */
 function Link(options) {
-  if ('string' === options) options = { prefix: options };
+  if (!this) return new Link(options);
+  if ('string' === typeof options) options = { prefix: options };
+
   options = options || {};
 
   //
   // Prepare empty data object and set prefix.
   //
-  this.prefix = (options.prefix || 'OBS_').toUpperCase();
+  this.prefix = (options.prefix || 'OBS_').toUpperCase().trim();
   this.data = {};
 
   this.read();
@@ -77,7 +79,7 @@ Link.prototype.parse = function parse(key, value) {
  * @api public
  */
 Link.prototype.get = function get(key) {
-  return this.data[key.toUpperCase()];
+  return this.data[key.toUpperCase()] || {};
 };
 
 //

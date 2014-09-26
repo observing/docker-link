@@ -4,7 +4,7 @@
   "description": "Parser for reading environment variables set by linking Docker containers",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "mocha --reporter spec --ui bdd test.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,10 @@
   "bugs": {
     "url": "https://github.com/observing/docker-link/issues"
   },
-  "homepage": "https://github.com/observing/docker-link"
+  "homepage": "https://github.com/observing/docker-link",
+  "devDependencies": {
+    "assume": "0.0.x",
+    "mocha": "1.21.x",
+    "pre-commit": "0.0.x"
+  }
 }
