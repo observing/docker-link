@@ -1,0 +1,27 @@
+{
+  "name": "docker-link",
+  "version": "1.0.0",
+  "description": "Parser for reading environment variables set by linking Docker containers",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/observing/docker-link.git"
+  },
+  "keywords": [
+    "Docker",
+    "link",
+    "container",
+    "read",
+    "environment",
+    "variables"
+  ],
+  "author": "Martijn Swaagman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/observing/docker-link/issues"
+  },
+  "homepage": "https://github.com/observing/docker-link"
+}
