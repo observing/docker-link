@@ -8,6 +8,7 @@
  * @api public
  */
 function Link(options) {
+  if ('string' === options) options = { prefix: options };
   options = options || {};
 
   //
@@ -17,7 +18,7 @@ function Link(options) {
   this.data = {};
 
   this.read();
-};
+}
 
 /**
  * Read prefixed environment variables and parse. This will result in a hash
@@ -32,7 +33,7 @@ Link.prototype.read = function read() {
   }
 
   return this;
-}
+};
 
 /**
  * Parse all the known environment variables created by Docker.
@@ -42,7 +43,7 @@ Link.prototype.read = function read() {
  * @returns {Link} Fluent interface
  * @api private
  */
-Link.prototype.parse = function(key, value) {
+Link.prototype.parse = function parse(key, value) {
   var keys = key.substring(this.prefix.length).split('_')
     , directive = keys.slice(1);
 
@@ -66,7 +67,7 @@ Link.prototype.parse = function(key, value) {
   this.data[keys[0]][directive.join('_').toLowerCase()] = value;
 
   return this;
-}
+};
 
 /**
  * Get the hash from the stored data.
@@ -75,11 +76,11 @@ Link.prototype.parse = function(key, value) {
  * @return {Object} Hash with environment values.
  * @api public
  */
-Link.prototype.get = function(key) {
+Link.prototype.get = function get(key) {
   return this.data[key.toUpperCase()];
-}
+};
 
 //
 // Expose the constructor
 //
-exports.module = Link;
+module.exports = Link;
